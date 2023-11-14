@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+table, th, tr, td{
+padding: 10px 80px;
+border-collapse: collapse;
+}
+</style>
+<body>
+
+
+    <table border="5">
+        <tr>
+            <th><button id="paid" onclick="showName()">Name list</button></th>
+            <th><button id="paid" onclick="showPaid()">Paid</button></th>
+            <th><button id="paid" onclick="showNotPaid()">Not Paid</button></th>
+            <!-- <th><button id="paid" onclick="showGender()">Gender</button></th> -->
+        </tr>
+
+        <tr>
+            <td><ol id="lister1"></ol></td>
+            <td><ol id="lister2"></ol></td>
+            <td><ol id="lister3"></ol></td>
+            <!-- <td><ol id="lister"></ol></td> -->
+
+            
+        </tr>
+    </table>
+    
+</body>
+<script>
+    let users = [
+    {
+        name: "Matthew",
+        password: "123456",
+        gender: "Male",
+        email: "matthew@yahoo.com",
+        paid: true
+    },
+    {
+        name: "Tayo",
+        password: "123456",
+        gender: "Male",
+        email: "Chicken@yahoo.com",
+        paid: false
+    },
+    {
+        name: "Declain rice",
+        password: "431206",
+        gender: "Female",
+        email: "declainrice@yahoo.com",
+        paid: false
+    },
+    {
+        name: "Daniel",
+        password: "123456",
+        gender: "Male",
+        email: "daniel@yahoo.com",
+        paid: true
+    },
+    {
+        name: "Adeleke",
+        password: "241507",
+        gender: "Male",
+        email: "adeleke@yahoo.com",
+        paid: false
+    },
+    {
+        name: "vvic",
+        password: "418967",
+        gender: "Female",
+        email: "vickky@yahoo.com",
+        paid: false
+    },
+    {
+        name: "Durodola",
+        password: "765306",
+        gender: "Female",
+        email: "durodola@yahoo.com",
+        paid: true
+    },
+    {
+        name: "Alex vidaal",
+        password: "064097",
+        gender: "Male",
+        email: "fash@yahoo.com",
+        paid: false
+    }
+];
+
+
+    let { name, password, gender, email, paid} = users
+
+    function showName(){
+        users.forEach((item)=>{
+            lister1.innerHTML += "<li>" + item.name + "  " + item.gender+ "</li>"
+        })
+        return;
+    }
+
+    function showPaid(){
+        users.forEach((item)=>{
+            if(item.paid){
+                lister2.innerHTML += "<li>" +item.name+ "</li>"
+            }
+        })
+        return;
+    }
+
+    function showNotPaid(){
+        users.forEach((item)=>{
+            if(!item.paid){
+                lister3.innerHTML += "<li>" +item.name+ "</li>"
+            }
+        })
+        return;
+    }
+
+    
+    </script>
+    </html>
